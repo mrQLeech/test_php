@@ -1,4 +1,4 @@
-﻿<?php header('Content-type: text/html; charset=utf-8'); ?>
+<?php header('Content-type: text/html; charset=ansi'); ?>
 <?php
 $arrPolindroms = ["Аргентина манит негра", "Sum summus mus"];
 

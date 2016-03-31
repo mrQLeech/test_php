@@ -1,6 +1,6 @@
-ï»¿<?php header('Content-type: text/html; charset=utf-8'); ?>
+<?php header('Content-type: text/html; charset=windows-1251'); ?>
 <?php
-$arrPolindroms = ["ÐÑ€Ð³ÐµÐ½Ñ‚Ð¸Ð½Ð° Ð¼Ð°Ð½Ð¸Ñ‚ Ð½ÐµÐ³Ñ€Ð°", "Sum summus mus"];
+$arrPolindroms = ["Àðãåíòèíà ìàíèò íåãðà", "Sum summus mus"];
 
 function checkPolindrom($inString){
     if (strlen($inString) === 0 ){
@@ -14,13 +14,14 @@ function checkPolindrom($inString){
         return $inString;
     }
 
+   
+
     return $inString[0] ;
 }
 
 function cleanString($inString){
     $clStr =  strtolower($inString);
-    echo getParagraph($clStr);
-    return preg_replace('/\PL/u', '', $clStr);
+    return preg_replace('/[.,!?:…\s]/i', '', $clStr);
 }
 
 function getParagraph($str){
