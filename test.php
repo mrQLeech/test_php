@@ -1,11 +1,19 @@
 <?php
 $arrPolindroms = ["Àğãåíòèíà ìàíèò íåãğà", "Sum summus mus"];
-
+phpinfo();
 function checkPolindrom($inString){
+    if (strlen($inString) === 0 ){
+        return 0;
+    }
+
     $str = cleanString($inString);
     $revers = strrev($str);
 
-    return $str === $revers;
+    if ($str === $revers){
+        return $inString;
+    }
+
+    return $inString[0] ;
 }
 
 function cleanString($inString){
@@ -13,8 +21,13 @@ function cleanString($inString){
     return preg_replace('/\PL/u', '', $clStr);
 }
 
-echo 'revers 1 = ' . checkPolindrom($arrPolindroms[0]) . "\n";
-echo 'revers 2 = ' . checkPolindrom($arrPolindroms[1]) . " \r" ;
-echo 'revers 3 = ' . checkPolindrom('alpha romeo') . " \r" ;
+function getParagraph($str){
+    return '<p>' . $str . "</p>";
+}
+
+
+echo getParagraph('revers 1 = ' . checkPolindrom($arrPolindroms[0])) ;
+echo getParagraph('revers 2 = ' . checkPolindrom($arrPolindroms[1]));
+echo getParagraph('revers 3 = ' . checkPolindrom('alpha romeo')) ;
 
 ?>
